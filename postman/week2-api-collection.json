@@ -1,0 +1,100 @@
+{
+  "info": {
+    "name": "Swarup Patil Week 2 APIs",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Register user",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\": \"Swarup Patil\", \"email\": \"swarup@example.com\", \"password\": \"StrongPass123\"}"
+        },
+        "url": "http://localhost:5002/api/auth/register"
+      }
+    },
+    {
+      "name": "Login user",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"email\": \"swarup@example.com\", \"password\": \"StrongPass123\"}"
+        },
+        "url": "http://localhost:5002/api/auth/login"
+      }
+    },
+    {
+      "name": "Get tasks",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:5001/api/tasks"
+      }
+    },
+    {
+      "name": "Create task",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"title\": \"Complete Week 2 assignment\"}"
+        },
+        "url": "http://localhost:5001/api/tasks"
+      }
+    },
+    {
+      "name": "Get notes (add Bearer token)",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer PASTE_LOGIN_TOKEN_HERE"
+          }
+        ],
+        "url": "http://localhost:5003/api/notes"
+      }
+    },
+    {
+      "name": "Create note (add Bearer token)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer PASTE_LOGIN_TOKEN_HERE"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"title\": \"React revision\", \"content\": \"Practise props, state, and React Router.\"}"
+        },
+        "url": "http://localhost:5003/api/notes"
+      }
+    }
+  ]
+}

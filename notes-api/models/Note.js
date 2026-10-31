@@ -1,0 +1,1 @@
+import mongoose from 'mongoose';const schema=new mongoose.Schema({user:{type:mongoose.Schema.Types.ObjectId,required:true},title:{type:String,required:true,trim:true,maxlength:150},content:{type:String,default:'',maxlength:10000}},{timestamps:true});export default mongoose.model('Note',schema);

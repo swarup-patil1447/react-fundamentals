@@ -1,0 +1,3 @@
+import ProductCard from '../components/ProductCard.jsx';
+const products=[{name:'Gaming Keyboard',price:1499,description:'A comfortable keyboard for everyday gaming and typing.',emoji:'⌨️'},{name:'Gaming Mouse',price:899,description:'A responsive mouse for schoolwork and gaming.',emoji:'🖱️'},{name:'Headset',price:1799,description:'An over-ear headset for audio and calls.',emoji:'🎧'}];
+export default function ProductPage(){return <section className="panel"><h1>Product Information</h1><p className="muted">Each card receives product details through React props and uses a CSS Module.</p><div className="grid">{products.map(p=><ProductCard key={p.name} {...p}/>)}</div></section>}

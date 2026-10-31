@@ -1,0 +1,3 @@
+import express from 'express'; import mongoose from 'mongoose'; import cors from 'cors'; import dotenv from 'dotenv'; import auth from './routes/auth.js'; import {requireAuth} from './middleware/requireAuth.js';
+dotenv.config();const app=express();app.use(cors());app.use(express.json());app.get('/',(_q,s)=>s.json({message:'Authentication API is running'}));app.use('/api/auth',auth);app.get('/api/auth/me',requireAuth,(q,s)=>s.json({user:q.user}));
+const PORT=process.env.PORT||5002;mongoose.connect(process.env.MONGODB_URI).then(()=>app.listen(PORT,()=>console.log(`Auth API running on ${PORT}`))).catch(e=>{console.error('MongoDB connection failed:',e.message);process.exit(1)});
